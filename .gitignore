@@ -45,3 +45,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+mvnw.cmd
+mvnw
+tipicker.iml
+*.class
+.mvn
+.idea
