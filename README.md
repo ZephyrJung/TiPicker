@@ -4,17 +4,17 @@
 
 以上是一种使用场景，即工作日志，可能有的emoji标签入下：
 
-​:sparkles:  sparkles 添加新文件 
-:art:  art 修改文件
-:cold_sweat:  cold_sweat 有疑问，需确认（非技术上的问题）
-:construction:  construction 未完成
-:bug:  bug 有问题，需确认
-:memo: memo（可能）还需要做的事情
-:clap:  clap 学到了，知道了
-:question:  question 需要研究一下 
-:exclamation:  exclamation 需要注意，别忘了
-:pushpin:  pushpin 标记，告知，声明，常用
-​:x:  x 纯删除，没有添加新的替代
+​:sparkles:  sparkles 添加新文件 <br/>
+​:art:  art 修改文件 <br/>
+​:cold_sweat:  cold_sweat 有疑问，需确认（非技术上的问题） <br/>
+​:construction:  construction 未完成 <br/>
+​:bug:  bug 有问题，需确认 <br/>
+​:memo: memo（可能）还需要做的事情 <br/>
+​:clap:  clap 学到了，知道了 <br/>
+​:question:  question 需要研究一下  <br/>
+​:exclamation:  exclamation 需要注意，别忘了 <br/>
+​:pushpin:  pushpin 标记，告知，声明，常用 <br/>
+​:x:​  x 纯删除，没有添加新的替代 <br/>
 
 另一种使用场景是心情日志，可以使用表情类emoji+日期时间作为标签
 
@@ -26,4 +26,4 @@
 
 ps，由于最近对Go颇有兴趣，还在想是不是应该用Go写，然而我现在只不过刚刚了解了基本语法，用来做web开发着实勉强。想来现阶段，实战还是把Java搞好再说，Go还是先放在培养皿里面吧。
 
-ps，此坑要在2018年之前填完！
+psa，此坑要在2018年之前填完！
