@@ -48,6 +48,5 @@ Temporary Items
 mvnw.cmd
 mvnw
 tipicker.iml
-*.class
 .mvn
 .idea
