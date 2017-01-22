@@ -23,7 +23,7 @@ public class TagList {
         }
     }
     public void destory(){
-        tagList.removeAll(tagList);
+        tagList=null;
     }
     public boolean insert(int pos,Tag tag){
         try {

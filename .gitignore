@@ -50,3 +50,5 @@ mvnw
 tipicker.iml
 .mvn
 .idea
+*.class
+target/classes/application.properties
