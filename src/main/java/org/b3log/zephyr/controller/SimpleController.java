@@ -11,8 +11,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by wenchao.ren on 2014/4/26.
  */
 @Controller
-@EnableAutoConfiguration
 public class SimpleController {
+
+    @RequestMapping(value ="/", method = RequestMethod.GET)
+    @ResponseBody
+    public String index(){
+        return "hello index";
+    }
 
     @RequestMapping(value ="/hello", method = RequestMethod.GET)
     @ResponseBody
@@ -20,7 +25,4 @@ public class SimpleController {
         return "hello world";
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(SimpleController.class, args);
-    }
 }
