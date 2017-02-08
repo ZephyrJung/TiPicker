@@ -2,14 +2,22 @@ package org.b3log.zephyr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @SpringBootApplication
 public class TipickerApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(TipickerApplication.class, args);
 	}
 }
+/*
+Paragraph的Tag应该是固定的，这是基本元素
+这个Paragraph一般存储在一个Article中，但并不排除单拿出来的可能
+Article可能被收录到任意Book中
+Book也可能被任意Libarary保存
+并且均可以重复出现。但是在同层级下不能重复
+数据表层级保存：
+Paragraph表保存Tag和正文
+Article保存Tag和Paragraph
+Book保存Tag和Article
+Library保存Tag和Book
+ */
