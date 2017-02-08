@@ -7,6 +7,7 @@ import org.b3log.zephyr.structure.DoubleList;
  */
 public class Book {
     private String title;
+    private Tag tag;
     //是否使用双链表有待商榷
     private DoubleList<Article> book;
 }

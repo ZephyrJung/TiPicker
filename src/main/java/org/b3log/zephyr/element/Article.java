@@ -7,5 +7,6 @@ import java.util.List;
  */
 public class Article {
     private int order;//章节编号
+    private Tag tag;
     private List<Paragraph> article;
 }

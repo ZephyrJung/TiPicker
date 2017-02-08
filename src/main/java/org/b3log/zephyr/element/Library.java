@@ -8,6 +8,7 @@ import java.util.Set;
 public class Library {
     //存放类别、地点等信息
     private String area;
+    private Tag tag;
     //书籍的集合
     private Set<Book> library;
 }
