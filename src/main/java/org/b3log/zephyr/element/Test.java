@@ -4,6 +4,7 @@ package org.b3log.zephyr.element;
  * Created by Zephyr on 2017/2/11.
  */
 public class Test {
+    //symphony_user_tag
     private String oId;
     private String user_oId;
     private String tag_oId;
