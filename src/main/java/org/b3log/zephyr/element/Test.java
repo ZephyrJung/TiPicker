@@ -10,6 +10,11 @@ public class Test {
     private String tag_oId;
     private int type;
 
+    @Override
+    public String toString(){
+        return (oId+","+user_oId+","+tag_oId+","+type);
+    }
+
     public String getoId() {
         return oId;
     }
