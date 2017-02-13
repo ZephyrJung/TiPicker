@@ -5,7 +5,7 @@
     <#include "common/commoncss.ftl">
 </head>
 <body>
-<#include "common/commontop.ftl">
+<#include "common/top.ftl">
 Date: ${time?date}
 <br>
 Time: ${time?time}
