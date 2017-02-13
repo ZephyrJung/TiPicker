@@ -41,6 +41,10 @@ Message: ${message}
 
 <div id="pageDemo"></div>
 
+<div id="app">
+    {{ message }}
+</div>
+
 <script>
     layui.use(['layer', 'laypage', 'element'], function(){
         var layer = layui.layer
@@ -73,6 +77,15 @@ Message: ${message}
             }
         });
     });
+</script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
 </script>
 
 </body>
