@@ -1,7 +1,11 @@
-<#include "common/head.ftl">
+
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <#include "common/commoncss.ftl">
+</head>
 <body>
+<#include "common/commontop.ftl">
 Date: ${time?date}
 <br>
 Time: ${time?time}
@@ -87,6 +91,6 @@ Message: ${message}
         }
     })
 </script>
-
+<#include "common/commonjs.ftl">
 </body>
 </html>

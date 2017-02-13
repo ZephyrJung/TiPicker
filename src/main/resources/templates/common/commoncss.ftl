@@ -4,5 +4,3 @@
 <meta name="copyright" content="B3log" />
 <meta http-equiv="Window-target" content="_top" />
 <link rel="stylesheet" href="css/layui.css" />
-<script src="layui.js"></script>
-<script src="vue.js"></script>
