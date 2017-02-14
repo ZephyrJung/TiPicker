@@ -26,3 +26,41 @@ CREATE TABLE votelib (
   vote_type int,
   vote_value int
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE
+  pentatoniclib
+(
+  penta_id VARCHAR(20) NOT NULL,
+  tag_id VARCHAR(20) NOT NULL,
+  description VARCHAR(200),
+  message_list VARCHAR(1000),
+  creator VARCHAR(20) NOT NULL,
+  update_time DATETIME,
+  create_time DATETIME NOT NULL,
+  PRIMARY KEY (penta_id),
+  CONSTRAINT pentatoniclib_ix1 UNIQUE (penta_id)
+)
+  ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE
+  commentlib
+(
+  comment_id VARCHAR(50) NOT NULL,
+  comment_oid VARCHAR(50) NOT NULL,
+  comment_type INT NOT NULL,
+  content VARCHAR(500) NOT NULL,
+  commenter VARCHAR(20) NOT NULL,
+  create_time DATETIME NOT NULL,
+  PRIMARY KEY (comment_id),
+  CONSTRAINT commentlib_ix1 UNIQUE (comment_id)
+)
+  ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#临时用来测试
+CREATE TABLE
+  userlib
+(
+  user_id VARCHAR(20),
+  user_name VARCHAR(50)
+)
+  ENGINE=InnoDB DEFAULT CHARSET=utf8;
