@@ -6,6 +6,7 @@ import org.b3log.zephyr.element.mapper.TestMapper;
 import org.b3log.zephyr.element.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,7 +43,7 @@ public class DataController {
         return "成功记录："+count+" 条";
     }
 
-//    @Transactional
+    @Transactional
     @RequestMapping(value ="/addall", method = RequestMethod.GET)
     @ResponseBody
     public String addAllData(){
@@ -52,7 +53,7 @@ public class DataController {
         userMapper.saveUser(System.currentTimeMillis()+"","test4");
         userMapper.saveUser(System.currentTimeMillis()+"","test5");
         userMapper.saveUser(System.currentTimeMillis()+"","test6");
-        userMapper.saveUser(System.currentTimeMillis()+"","test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7");
+        userMapper.saveUser(System.currentTimeMillis()+"","test7");
         userMapper.saveUser(System.currentTimeMillis()+"","test8");
         userMapper.saveUser(System.currentTimeMillis()+"","test9");
         userMapper.saveUser(System.currentTimeMillis()+"","test10");
