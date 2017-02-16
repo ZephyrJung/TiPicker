@@ -1,6 +1,5 @@
 package org.b3log.zephyr.controller;
 
-import org.apache.ibatis.annotations.Param;
 import org.b3log.zephyr.element.Test;
 import org.b3log.zephyr.element.entity.UserLib;
 import org.b3log.zephyr.element.mapper.TestMapper;
@@ -11,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by yaya on 17-2-12.
  */
+
 @Controller
 public class DataController {
     @Autowired
@@ -42,6 +41,24 @@ public class DataController {
         int count=userMapper.saveUser(System.currentTimeMillis()+"",uname);
         return "成功记录："+count+" 条";
     }
+
+//    @Transactional
+    @RequestMapping(value ="/addall", method = RequestMethod.GET)
+    @ResponseBody
+    public String addAllData(){
+        userMapper.saveUser(System.currentTimeMillis()+"","test1");
+        userMapper.saveUser(System.currentTimeMillis()+"","test2");
+        userMapper.saveUser(System.currentTimeMillis()+"","test3");
+        userMapper.saveUser(System.currentTimeMillis()+"","test4");
+        userMapper.saveUser(System.currentTimeMillis()+"","test5");
+        userMapper.saveUser(System.currentTimeMillis()+"","test6");
+        userMapper.saveUser(System.currentTimeMillis()+"","test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7test7");
+        userMapper.saveUser(System.currentTimeMillis()+"","test8");
+        userMapper.saveUser(System.currentTimeMillis()+"","test9");
+        userMapper.saveUser(System.currentTimeMillis()+"","test10");
+        return "成功";
+    }
+
 
     @RequestMapping(value ="/delete", method = RequestMethod.GET)
     @ResponseBody
