@@ -3,94 +3,210 @@
 <html lang="en">
 <head>
     <#include "common/commoncss.ftl">
+    <style>
+        #editorInput{
+            width:500px;
+            resize: none;
+        }
+        #editorArea{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <#include "common/top.ftl">
-Date: ${time?date}
-<br>
-Time: ${time?time}
-<br>
-Message: ${message}
+
+<div class="container theme-showcase" role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h3>发布新内容</h3>
+        <p>
+            <textarea class="form-control" rows="3"></textarea>
+            <button type="button" class="btn btn-lg btn-default">Default</button>
+        </p>
+    </div>
 
 
-<blockquote class="layui-elem-quote">
-    温馨提示：如果最左侧的导航的高度超出了你的屏幕，你可以将鼠标移入导航区域，然后滑动鼠标滚轮即可
-</blockquote>
+    <div class="page-header">
+        <h1>Buttons</h1>
+    </div>
+    <p>
+        <button type="button" class="btn btn-lg btn-default">Default</button>
+        <button type="button" class="btn btn-lg btn-primary">Primary</button>
+        <button type="button" class="btn btn-lg btn-success">Success</button>
+        <button type="button" class="btn btn-lg btn-info">Info</button>
+        <button type="button" class="btn btn-lg btn-warning">Warning</button>
+        <button type="button" class="btn btn-lg btn-danger">Danger</button>
+        <button type="button" class="btn btn-lg btn-link">Link</button>
+    </p>
+    <p>
+        <button type="button" class="btn btn-default">Default</button>
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-link">Link</button>
+    </p>
+    <p>
+        <button type="button" class="btn btn-sm btn-default">Default</button>
+        <button type="button" class="btn btn-sm btn-primary">Primary</button>
+        <button type="button" class="btn btn-sm btn-success">Success</button>
+        <button type="button" class="btn btn-sm btn-info">Info</button>
+        <button type="button" class="btn btn-sm btn-warning">Warning</button>
+        <button type="button" class="btn btn-sm btn-danger">Danger</button>
+        <button type="button" class="btn btn-sm btn-link">Link</button>
+    </p>
+    <p>
+        <button type="button" class="btn btn-xs btn-default">Default</button>
+        <button type="button" class="btn btn-xs btn-primary">Primary</button>
+        <button type="button" class="btn btn-xs btn-success">Success</button>
+        <button type="button" class="btn btn-xs btn-info">Info</button>
+        <button type="button" class="btn btn-xs btn-warning">Warning</button>
+        <button type="button" class="btn btn-xs btn-danger">Danger</button>
+        <button type="button" class="btn btn-xs btn-link">Link</button>
+    </p>
 
-<div class="layui-tab layui-tab-card" lay-filter="demo" style="height: 300px;">
-    <ul class="layui-tab-title">
-        <li class="layui-this">演示说明</li>
-        <li>标题一</li>
-        <li>标题二</li>
-        <li>标题三</li>
-    </ul>
-    <div class="layui-tab-content" style="padding: 10px;">
-        <div class="layui-tab-item layui-show">
-            在这里，你将以最直观的形式体验Layui！在编辑器中可以执行layui相关的一切代码。
-            <br>你也可以点击左侧导航针对性地试验我们提供的示例。
-            <!--<br><br><a target="_blank" href="https://jq.qq.com/?_wv=1027&k=41lnosl" class="layui-btn">加入Layui开发者交流群</a>（系网友提供）-->
+
+    <div class="page-header">
+        <h1>Tables</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="layui-tab-item">内容1</div>
-        <div class="layui-tab-item">内容2</div>
-        <div class="layui-tab-item">内容3</div>
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
-<fieldset class="layui-elem-field">
-    <legend>字段集</legend>
-    <div class="layui-field-box">
-        内容区域
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td rowspan="2">1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@TwBootstrap</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-condensed">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</fieldset>
-
-<div id="pageDemo"></div>
-
-<div id="app">
-    {{ message }}
-</div>
-
-<script>
-    layui.use(['layer', 'laypage', 'element'], function(){
-        var layer = layui.layer
-                ,laypage = layui.laypage
-                ,element = layui.element();
-
-        //向世界问个好
-        layer.msg('Hello World', {
-            icon: 6
-            ,time: 6*1000 //6s后自动消失
-            //,offset: 'b' //从底部弹出
-        });
-
-        //监听Tab切换
-        element.on('tab(demo)', function(data){
-            layer.msg('切换了：'+ this.innerHTML);
-            console.log(data);
-        });
-
-        //分页
-        laypage({
-            cont: 'pageDemo' //分页容器的id
-            ,pages: 100 //总页数
-            ,skin: '#5FB878' //自定义选中色值
-            ,skip: true //开启跳页
-            ,jump: function(obj, first){
-                if(!first){
-                    layer.msg('第'+ obj.curr +'页');
-                }
-            }
-        });
-    });
-</script>
-
-<script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-            message: 'Hello Vue!'
-        }
-    })
-</script>
-<#include "common/commonjs.ftl">
 </body>
 </html>

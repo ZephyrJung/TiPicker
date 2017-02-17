@@ -1,14 +1,20 @@
-<ul class="layui-nav" lay-filter="">
-    <li class="layui-nav-item"><a href="">胳膊网</a></li>
-    <li class="layui-nav-item">
-        <a href="javascript:;">纵横聚合</a>
-        <dl class="layui-nav-child"> <!-- 二级菜单 -->
-            <dd><a href="">移动模块</a></dd>
-            <dd><a href="">后台模版</a></dd>
-            <dd><a href="">电商平台</a></dd>
-            <dd><a href="">电商平台</a></dd>
-            <dd><a href="">电商平台</a></dd>
-        </dl>
-    </li>
-    <li class="layui-nav-item"><a href="">社区</a></li>
-</ul>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">卖胳膊</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">主页</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
