@@ -1,5 +1,7 @@
 package org.b3log.zephyr.algorithm;
 
+import org.b3log.zephyr.util.PrintUtil;
+
 /**
  * Created by Zephyr on 2017/2/18.
  */
@@ -13,21 +15,10 @@ public class A08_SplitArray {
         new A08_SplitArray().splitSwappingIterative(array2);
         new A08_SplitArray().splitSwappingPartition(array3);
         new A08_SplitArray().splitSwappingRecursive(array4);
-        printArray(array1);
-        printArray(array2);
-        printArray(array3);
-        printArray(array4);
-    }
-
-    private static void printArray(int[] array){
-        for(int i=0;i<array.length;i++){
-            if(i+1!=array.length) {
-                System.out.print(array[i] + " ");
-            }else{
-                System.out.print(array[i]);
-            }
-        }
-        System.out.println();
+        PrintUtil.printArray(array1);
+        PrintUtil.printArray(array2);
+        PrintUtil.printArray(array3);
+        PrintUtil.printArray(array4);
     }
 
     public void splitSorting(int[] array) {
