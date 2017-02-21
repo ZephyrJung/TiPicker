@@ -30,6 +30,17 @@ public class PrintUtil {
         System.out.println();
     }
 
+    public static void printArray(String[] array){
+        for(int i=0;i<array.length;i++){
+            if(i+1!=array.length) {
+                System.out.print(array[i] + " ");
+            }else{
+                System.out.print(array[i]);
+            }
+        }
+        System.out.println();
+    }
+
     public static void printList(ListNode node){
         while(node!=null){
             System.out.print(node.toString());
