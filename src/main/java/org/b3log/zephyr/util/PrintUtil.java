@@ -3,6 +3,7 @@ package org.b3log.zephyr.util;
 import org.b3log.zephyr.structure.ListNode;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by yaya on 17-2-19.
@@ -17,6 +18,12 @@ public class PrintUtil {
             }
         }
         System.out.println();
+    }
+
+    public static void printArray(int[][] array){
+        for(int i=0;i<array.length;i++){
+            printArray(array[i]);
+        }
     }
 
     public static void printArray(Integer[] array){
@@ -64,4 +71,10 @@ public class PrintUtil {
         }
     }
 
+    public static void printSet(Set<Integer> set){
+        for(Integer i:set){
+            System.out.print(i.toString()+" ");
+        }
+        System.out.println();
+    }
 }
