@@ -21,191 +21,147 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <h3>发布新内容</h3>
-        <p>
-            <textarea class="form-control" rows="3"></textarea>
-            <button type="button" class="btn btn-lg btn-default">Default</button>
-        </p>
-    </div>
-
-
-    <div class="page-header">
-        <h1>Buttons</h1>
-    </div>
-    <p>
-        <button type="button" class="btn btn-lg btn-default">Default</button>
-        <button type="button" class="btn btn-lg btn-primary">Primary</button>
-        <button type="button" class="btn btn-lg btn-success">Success</button>
-        <button type="button" class="btn btn-lg btn-info">Info</button>
-        <button type="button" class="btn btn-lg btn-warning">Warning</button>
-        <button type="button" class="btn btn-lg btn-danger">Danger</button>
-        <button type="button" class="btn btn-lg btn-link">Link</button>
-    </p>
-    <p>
-        <button type="button" class="btn btn-default">Default</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-success">Success</button>
-        <button type="button" class="btn btn-info">Info</button>
-        <button type="button" class="btn btn-warning">Warning</button>
-        <button type="button" class="btn btn-danger">Danger</button>
-        <button type="button" class="btn btn-link">Link</button>
-    </p>
-    <p>
-        <button type="button" class="btn btn-sm btn-default">Default</button>
-        <button type="button" class="btn btn-sm btn-primary">Primary</button>
-        <button type="button" class="btn btn-sm btn-success">Success</button>
-        <button type="button" class="btn btn-sm btn-info">Info</button>
-        <button type="button" class="btn btn-sm btn-warning">Warning</button>
-        <button type="button" class="btn btn-sm btn-danger">Danger</button>
-        <button type="button" class="btn btn-sm btn-link">Link</button>
-    </p>
-    <p>
-        <button type="button" class="btn btn-xs btn-default">Default</button>
-        <button type="button" class="btn btn-xs btn-primary">Primary</button>
-        <button type="button" class="btn btn-xs btn-success">Success</button>
-        <button type="button" class="btn btn-xs btn-info">Info</button>
-        <button type="button" class="btn btn-xs btn-warning">Warning</button>
-        <button type="button" class="btn btn-xs btn-danger">Danger</button>
-        <button type="button" class="btn btn-xs btn-link">Link</button>
-    </p>
-
-
-    <div class="page-header">
-        <h1>Tables</h1>
+        <div class="row">
+            <div class="col-md-10">
+                <textarea class="form-control" rows="5"></textarea>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-lg btn-default">发表</button>
+            </div>
+        </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
-            </table>
+        <button class="btn btn-default" type="button">
+              Java <span class="badge">3</span>
+        </button>
+        <button class="btn btn-default" type="button">
+              Golang <span class="badge">7</span>
+        </button>
+        <button class="btn btn-default" type="button">
+              设计模式 <span class="badge">8</span>
+        </button>
+        <button class="btn btn-default" type="button">
+              数据结构与算法 <span class="badge">1</span>
+        </button>
+        <button class="btn btn-default" type="button">
+              Spring <span class="badge">5</span>
+        </button>
+        <button class="btn btn-default" type="button">
+              Github <span class="badge">1</span>
+        </button>
+    </div>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
         </div>
-        <div class="col-md-6">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
-            </table>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media
+                <span class="label label-danger">Label1</span>
+                <span class="label label-info">Label2</span>
+                <span class="label label-success">Label3</span>
+        	</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td rowspan="2">1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@TwBootstrap</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
-            </table>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
         </div>
-        <div class="col-md-6">
-            <table class="table table-condensed">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
-            </table>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+        </div>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+        </div>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+        </div>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+        </div>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+        </div>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+        </div>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+        </div>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+        </div>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left media-middle">
+        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+        </div>
+        <div class="media-body">
+        	<h4 class="media-heading">Middle aligned media</h4>
+        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         </div>
     </div>
 </body>

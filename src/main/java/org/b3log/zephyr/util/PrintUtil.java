@@ -60,7 +60,7 @@ public class PrintUtil {
         }
     }
 
-    public static void printList(List<String> list){
+    public static void printList(List list){
         for(int i=0;i<list.size();i++){
             System.out.print(list.get(i).toString());
             if(i!=list.size()-1){
@@ -70,6 +70,13 @@ public class PrintUtil {
             }
         }
     }
+
+    public static void printLists(List list){
+        for(int i=0;i<list.size();i++){
+            printList((List)list.get(i));
+        }
+    }
+
 
     public static void printSet(Set<Integer> set){
         for(Integer i:set){
