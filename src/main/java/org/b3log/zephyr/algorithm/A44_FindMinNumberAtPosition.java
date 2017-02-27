@@ -36,7 +36,6 @@ public class A44_FindMinNumberAtPosition {
         n14.setLeft(n13);
 
         int result = new A44_FindMinNumberAtPosition().find(root, 1);
-        System.out.println(-6>>2);
         System.out.println(result);
     }
 

@@ -22,12 +22,14 @@
     <div class="jumbotron">
         <h3>发布新内容</h3>
         <div class="row">
-            <div class="col-md-10">
-                <textarea class="form-control" rows="5"></textarea>
-            </div>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-lg btn-default">发表</button>
-            </div>
+            <form action="../addMessage" method="post">
+                <div class="col-md-10">
+                    <textarea id="message" name="message" class="form-control" rows="5"></textarea>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" class="btn btn-lg btn-default" value="发表"/>
+                </div>
+            </form>
         </div>
     </div>
     <div class="row">
@@ -50,119 +52,28 @@
               Github <span class="badge">1</span>
         </button>
     </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+    <#list messageLibList as message>
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Middle aligned media
+                    <span class="label label-danger">Label1</span>
+                    <span class="label label-info">Label2</span>
+                    <span class="label label-success">Label3</span>
+                </h4>
+                <p>${message.content}</p>
+                <p>${message.creator}</p>
+                <p>${message.createTime?datetime}</p>
+            </div>
         </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media
-                <span class="label label-danger">Label1</span>
-                <span class="label label-info">Label2</span>
-                <span class="label label-success">Label3</span>
-        	</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
-        </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
-        </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
-        </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
-        </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
-        </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
-        </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
-        </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
-        </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
-        </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left media-middle">
-        	<a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
-        </div>
-        <div class="media-body">
-        	<h4 class="media-heading">Middle aligned media</h4>
-        	<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        	<p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
+    </#list>
+
+    <script type="text/javascript">
+        function githubLogin(){
+
+        }
+    </script>
 </body>
 </html>
