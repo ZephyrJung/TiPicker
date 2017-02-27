@@ -23,11 +23,16 @@
         <h3>发布新内容</h3>
         <div class="row">
             <form action="../addMessage" method="post">
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <textarea id="message" name="message" class="form-control" rows="5"></textarea>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
+                <div class="row">
+                    <input type="text" id="tag" name="tag" placeholder="输入标签"/>
+                </div>
+                <div class="row" style="margin-top:10px;">
                     <input type="submit" class="btn btn-lg btn-default" value="发表"/>
+                </div>
                 </div>
             </form>
         </div>
@@ -52,20 +57,20 @@
               Github <span class="badge">1</span>
         </button>
     </div>
-    <#list messageLibList as message>
+    <#list welcomeList as wl>
         <div class="media">
             <div class="media-left media-middle">
-                <a href="#"> <img alt="64x64" class="media-object" data-src="holder.js/64x64" style="width: 64px; height: 64px;" src="http://oj7231hub.bkt.clouddn.com/e6d676b76ec14fd2b9709f13379c0f1c.jpeg" data-holder-rendered="true"> </a>
+                <a href="#"> wl.tag </a>
             </div>
             <div class="media-body">
-                <h4 class="media-heading">Middle aligned media
+                <h4 class="media-heading">Test
                     <span class="label label-danger">Label1</span>
                     <span class="label label-info">Label2</span>
                     <span class="label label-success">Label3</span>
                 </h4>
-                <p>${message.content}</p>
-                <p>${message.creator}</p>
-                <p>${message.createTime?datetime}</p>
+                <p>${wl.content}</p>
+                <p>${wl.creator}</p>
+                <p>${wl.createTime?datetime}</p>
             </div>
         </div>
     </#list>

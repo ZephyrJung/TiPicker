@@ -1,0 +1,45 @@
+package org.b3log.zephyr.element.model;
+
+import java.util.Date;
+
+/**
+ * Created by yaya on 17-2-27.
+ */
+public class WelcomeModel {
+    private String tag;
+    private String content;
+    private String creator;
+    private Date createTime;
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+}

@@ -21,8 +21,11 @@ import java.util.List;
 public interface MessageMapper {
     @Select("SELECT * FROM messagelib order by create_time desc")
     @Results({
+            @Result(property="messageId",column="message_id"),
+            @Result(property="tagId",column="tag_id"),
             @Result(property = "content",column = "content"),
             @Result(property = "creator",column = "creator"),
+            @Result(property = "updateTime",column="update_time"),
             @Result(property = "createTime",column="create_time")
     })
     List<MessageLib> findAllMessages();
