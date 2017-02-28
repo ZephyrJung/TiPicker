@@ -1,4 +1,4 @@
-package org.b3log.zephyr.element.mapper;
+package org.b3log.zephyr.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

@@ -2,8 +2,8 @@ package org.b3log.zephyr.service.impl;
 
 import org.b3log.zephyr.element.entity.MessageLib;
 import org.b3log.zephyr.element.entity.TagLib;
-import org.b3log.zephyr.element.mapper.MessageMapper;
-import org.b3log.zephyr.element.mapper.TagMapper;
+import org.b3log.zephyr.mapper.MessageMapper;
+import org.b3log.zephyr.mapper.TagMapper;
 import org.b3log.zephyr.element.model.WelcomeModel;
 import org.b3log.zephyr.service.WelcomeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,11 +32,11 @@ public class WelcomeServiceImpl implements WelcomeService{
         List<MessageLib> messageLibs=messageMapper.findAllMessages();
         for(MessageLib ml:messageLibs){
             WelcomeModel wm=new WelcomeModel();
-            TagLib tagLib=tagMapper.findByTagId(ml.getTagId());
-            wm.setContent(ml.getContent());
-            wm.setCreateTime(ml.getCreateTime());
+            TagLib tagLib=tagMapper.findByTagId(ml.getTag_id());
+            wm.setMessage(ml.getContent());
+            wm.setCreateTime(ml.getCreate_time());
             wm.setCreator(ml.getCreator());
-            wm.setTag(tagLib.getTagName());
+            wm.setTag(tagLib.getTag_name());
             welcomeList.add(wm);
         }
         return welcomeList;
@@ -55,9 +55,9 @@ public class WelcomeServiceImpl implements WelcomeService{
             tid =System.currentTimeMillis()+"";
             tagMapper.saveTag(tid.toString(),wm.getTag(),"test","test",wm.getCreator(),createTime);
         }else{
-            tid=tagLib.getTagId();
+            tid=tagLib.getTag_id();
         }
 
-        messageMapper.saveMessage(mid.toString(),tid.toString(),wm.getContent(),wm.getCreator(),updateTime,createTime);
+        messageMapper.saveMessage(mid.toString(),tid.toString(),wm.getMessage(),wm.getCreator(),updateTime,createTime);
     }
 }

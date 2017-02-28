@@ -60,7 +60,7 @@
     <#list welcomeList as wl>
         <div class="media">
             <div class="media-left media-middle">
-                <a href="#"> wl.tag </a>
+                <a href="#"> ${wl.tag} </a>
             </div>
             <div class="media-body">
                 <h4 class="media-heading">Test
@@ -68,7 +68,7 @@
                     <span class="label label-info">Label2</span>
                     <span class="label label-success">Label3</span>
                 </h4>
-                <p>${wl.content}</p>
+                <p>${wl.message}</p>
                 <p>${wl.creator}</p>
                 <p>${wl.createTime?datetime}</p>
             </div>

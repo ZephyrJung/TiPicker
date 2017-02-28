@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class WelcomeModel {
     private String tag;
-    private String content;
+    private String message;
     private String creator;
     private Date createTime;
 
@@ -19,12 +19,12 @@ public class WelcomeModel {
         this.tag = tag;
     }
 
-    public String getContent() {
-        return content;
+    public String getMessage() {
+        return message;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getCreator() {

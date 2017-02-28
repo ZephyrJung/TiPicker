@@ -6,27 +6,26 @@ import java.util.Date;
  * Created by Zephyr on 2017/2/27.
  */
 public class MessageLib {
-    private String messageId;
-    private String tagId;
+    private String message_id;
+    private String tag_id;
     private String content;
     private String creator;
-    private Date updateTime;
-    private Date createTime;
-
-    public String getMessageId() {
-        return messageId;
+    private Date update_time;
+    private Date create_time;
+    public String getMessage_id() {
+        return message_id;
     }
 
-    public void setMessageId(String messageId) {
-        this.messageId = messageId;
+    public void setMessage_id(String message_id) {
+        this.message_id = message_id;
     }
 
-    public String getTagId() {
-        return tagId;
+    public String getTag_id() {
+        return tag_id;
     }
 
-    public void setTagId(String tagId) {
-        this.tagId = tagId;
+    public void setTag_id(String tag_id) {
+        this.tag_id = tag_id;
     }
 
     public String getContent() {
@@ -45,19 +44,19 @@ public class MessageLib {
         this.creator = creator;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public Date getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Date update_time) {
+        this.update_time = update_time;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Date create_time) {
+        this.create_time = create_time;
     }
 }
