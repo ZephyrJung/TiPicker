@@ -18,13 +18,11 @@ import java.util.List;
  */
 @Mapper
 public interface TagMapper {
-    @Select("SELECT * FROM messagelib order by create_time desc")
-    @Results({
-            @Result(property = "content",column = "content"),
-            @Result(property = "creator",column = "creator"),
-            @Result(property = "createTime",column="create_time")
-    })
-    List<TagLib> findAllMessages();
+    @Select("SELECT * FROM taglib t WHERE EXISTS (SELECT tag_id FROM messagelib m WHERE t.tag_id=m.tag_id AND creator=#{uid})")
+    List<TagLib> findTagsByUser(@Param("uid") String uid);
+
+    @Select("SELECT COUNT(1) FROM messagelib where tag_id=#{tid} and creator=#{uid}")
+    int countTagsById(@Param("tid") String tid,@Param("uid") String uid);
 
     @Select("SELECT * FROM taglib WHERE tag_id=#{tid}")
     TagLib findByTagId(@Param("tid") String tid);

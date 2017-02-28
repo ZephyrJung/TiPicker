@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by yaya on 17-2-27.
  */
-public class WelcomeModel {
+public class WelcomeListModel {
     private String tag;
     private String message;
     private String creator;

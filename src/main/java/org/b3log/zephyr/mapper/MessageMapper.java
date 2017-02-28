@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.b3log.zephyr.element.entity.MessageLib;
-import org.b3log.zephyr.element.entity.UserLib;
 
 import java.util.Date;
 import java.util.List;
@@ -19,17 +18,12 @@ import java.util.List;
 public interface MessageMapper {
     @Select("SELECT * FROM messagelib order by create_time desc")
 //    @Results({
-//            @Result(property="messageId",column="message_id"),
-//            @Result(property="tagId",column="tag_id"),
-//            @Result(property = "content",column = "content"),
-//            @Result(property = "creator",column = "creator"),
-//            @Result(property = "updateTime",column="update_time"),
 //            @Result(property = "createTime",column="create_time")
 //    })
     List<MessageLib> findAllMessages();
 
     @Select("SELECT * FROM messagelib WHERE message_id=#{mid}")
-    UserLib findByMessageId(@Param("mid") String mid);
+    MessageLib findByMessageId(@Param("mid") String mid);
 
     @Insert("INSERT INTO messagelib VALUES(#{messageId},#{tagId},#{content},#{creator},#{updateTime},#{createTime})")
     int saveMessage(@Param("messageId") String messageId, @Param("tagId") String tagId,

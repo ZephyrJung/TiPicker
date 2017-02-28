@@ -2,9 +2,10 @@ package org.b3log.zephyr.service.impl;
 
 import org.b3log.zephyr.element.entity.MessageLib;
 import org.b3log.zephyr.element.entity.TagLib;
+import org.b3log.zephyr.element.model.WelcomeTagModel;
 import org.b3log.zephyr.mapper.MessageMapper;
 import org.b3log.zephyr.mapper.TagMapper;
-import org.b3log.zephyr.element.model.WelcomeModel;
+import org.b3log.zephyr.element.model.WelcomeListModel;
 import org.b3log.zephyr.service.WelcomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,11 +28,12 @@ public class WelcomeServiceImpl implements WelcomeService{
     private MessageMapper messageMapper;
 
     @Override
-    public List<WelcomeModel> getWelcomeList() {
-        List<WelcomeModel> welcomeList=new ArrayList<WelcomeModel>();
+    public List<WelcomeListModel> getWelcomeList() {
+        List<WelcomeListModel> welcomeList=new ArrayList<WelcomeListModel>();
+        //目前为findAll，但之后可能会改成findRecent
         List<MessageLib> messageLibs=messageMapper.findAllMessages();
         for(MessageLib ml:messageLibs){
-            WelcomeModel wm=new WelcomeModel();
+            WelcomeListModel wm=new WelcomeListModel();
             TagLib tagLib=tagMapper.findByTagId(ml.getTag_id());
             wm.setMessage(ml.getContent());
             wm.setCreateTime(ml.getCreate_time());
@@ -43,8 +45,21 @@ public class WelcomeServiceImpl implements WelcomeService{
     }
 
     @Override
+    public List<WelcomeTagModel> getWelcomeTag(String userid) {
+        List<WelcomeTagModel> welcomeTagModels=new ArrayList<WelcomeTagModel>();
+        List<TagLib> tagLibs=tagMapper.findTagsByUser(userid);
+        for(TagLib tagLib:tagLibs){
+            WelcomeTagModel welcomeTagModel=new WelcomeTagModel();
+            welcomeTagModel.setTagName(tagLib.getTag_name());
+            welcomeTagModel.setTagCount(tagMapper.countTagsById(tagLib.getTag_id(),userid));
+            welcomeTagModels.add(welcomeTagModel);
+        }
+        return welcomeTagModels;
+    }
+
+    @Override
     @Transactional
-    public void saveWelcomeModel(WelcomeModel wm) {
+    public void saveWelcomeListModel(WelcomeListModel wm) {
         Long mid=System.currentTimeMillis();
         String tid;
         TagLib tagLib=tagMapper.findByTagName(wm.getTag());
