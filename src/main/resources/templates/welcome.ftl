@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <#include "common/commoncss.ftl">
+    <#include "common/common.ftl">
 </head>
 <body>
 <#include "common/top.ftl">
@@ -11,21 +11,83 @@
     <div class="jumbotron">
         <div class="container">
         <h3>发布新内容</h3>
-        <div class="row">
-            <form action="../addMessage" method="post">
-                <div class="col-md-9">
-                    <textarea id="message" name="message" class="form-control" rows="3"></textarea>
+            <div class="row">
+                <form id="queryForm" action="#" method="get">
+                    <div class="col-md-1">
+                        <label>类型</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select id="messageType" class="form-control">
+                            <option value="1">贴吧</option>
+                            <option value="2">论坛</option>
+                            <option value="3">记录</option>
+                            <option value="4">活动</option>
+                            <option value="5">聊天</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <label>特定要求1</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" id="tag" name="tag"/>
+                    </div>
+                    <div class="col-md-1">
+                        <label>特定要求2</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" id="tag" name="tag"/>
+                    </div>
+                </form>
+            </div>
+            <div class="row" style="margin-top:10px;">
+                <form id="queryForm" action="#" method="get">
+                    <div class="col-md-1">
+                        <label>特定要求3</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" id="tag" name="tag"/>
+                    </div>
+                    <div class="col-md-1">
+                    <label>特定要求4</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" id="tag" name="tag"/>
+                    </div>
+                    <div class="col-md-1">
+                        <label>发布标签</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" id="tag" name="tag"/>
+                    </div>
+
+                </form>
+            </div>
+            <div class="row" style="margin-top:10px;">
+                <div class="col-md-1">
+                    <label>特定要求3</label>
                 </div>
-                <div class="col-md-3">
-                <div class="row">
-                    <input type="text" id="tag" name="tag" placeholder="输入标签"/>
+                <div class="col-md-2">
+                    <input type="text" id="tag" name="tag"/>
                 </div>
-                <div class="row" style="margin-top:10px;">
+                <div class="col-md-1">
+                    <label>特定要求4</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="tag" name="tag"/>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <input type="submit" class="btn btn-default" value="查询"/>
                     <input type="submit" class="btn btn-default" value="发表"/>
                 </div>
-                </div>
-            </form>
-        </div>
+            </div>
+            <div class="row" style="margin-top:25px;">
+                <form id="addForm" action="../addMessage" method="post">
+                        <div class="col-md-9">
+                            <textarea id="message" name="message" class="form-control" rows="3"></textarea>
+                        </div>
+                </form>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -71,10 +133,11 @@
         </div>
     </#list>
     </div>
-    <script type="text/javascript">
-        function githubLogin(){
+    <#--<script type="text/javascript">-->
+        <#--function githubLogin(){-->
 
-        }
-    </script>
+        <#--}-->
+    <#--</script>-->
+    <script src="js/welcome.js"></script>
 </body>
 </html>

@@ -6,4 +6,5 @@
 
 <!-- Bootstrap -->
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
-
+<!--jQuery-->
+<script src="js/jquery-1.11.0.min.js"></script>
