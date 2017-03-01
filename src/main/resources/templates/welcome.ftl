@@ -26,10 +26,11 @@
                         </select>
                     </div>
                     <div class="col-md-1">
-                        <label>特定要求1</label>
+                        <label id="subjectLabel">特定要求1</label>
                     </div>
                     <div class="col-md-2">
-                        <input type="text" id="tag" name="tag"/>
+                        <select id="subjectSelect" class="form-control">
+                        </select>
                     </div>
                     <div class="col-md-1">
                         <label>特定要求2</label>
@@ -70,7 +71,7 @@
                     <input type="text" id="tag" name="tag"/>
                 </div>
                 <div class="col-md-1">
-                    <label>特定要求4</label>
+                    <label>特定要求4</label>˜
                 </div>
                 <div class="col-md-2">
                     <input type="text" id="tag" name="tag"/>

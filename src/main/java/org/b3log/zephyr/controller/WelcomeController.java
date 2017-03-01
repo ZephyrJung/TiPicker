@@ -9,11 +9,15 @@ import org.b3log.zephyr.element.model.WelcomeTagModel;
 import org.b3log.zephyr.service.WelcomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -54,5 +58,16 @@ public class WelcomeController {
     @GetMapping("/github")
     public void githubLogin(HttpServletRequest request){
 
+    }
+
+    @GetMapping("/loadSubject")
+    @ResponseBody
+    public Map<String,String[]> loadSubject(String select){
+        Map<String,String[]> map=new HashMap<>();
+        if(select.equals("1")){//1日后应当使用枚举，返回结果应当通过搜索（一级除外）
+            map.put("keys",new String[]{"1","2","3","4","5"});
+            map.put("values",new String[]{"hello","world","Iam","java","programmer"});
+        }
+        return map;
     }
 }
