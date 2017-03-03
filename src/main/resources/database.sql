@@ -11,13 +11,16 @@ CREATE TABLE messagelib (
   CONSTRAINT messagelib_ix1 UNIQUE (message_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE taglib (
-  tag_id varchar(20) NOT NULL,
-  tag_name varchar(50) NOT NULL,
-  tag_logo varchar(50) NOT NULL,
-  description varchar(200),
-  creator varchar(20) NOT NULL,
-  create_time datetime NOT NULL, PRIMARY KEY (tag_id), CONSTRAINT taglib_ix1 UNIQUE (tag_id)
+CREATE TABLE `taglib` (
+  `tag_id` varchar(20) NOT NULL,
+  `tag_code` varchar(2) NOT NULL,
+  `tag_name` varchar(50) NOT NULL,
+  `tag_logo` varchar(50) NOT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `creator` varchar(20) NOT NULL,
+  `create_time` datetime NOT NULL,
+  PRIMARY KEY (`tag_id`),
+  UNIQUE KEY `taglib_ix1` (`tag_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE votelib (
@@ -55,6 +58,19 @@ CREATE TABLE
   CONSTRAINT commentlib_ix1 UNIQUE (comment_id)
 )
   ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+//条件表
+CREATE TABLE `conditionLib` (
+  `condition_id` varchar(20) NOT NULL,
+  `type_tag_1` varchar(20),
+  `type_tag_2` varchar(20),
+  `type_tag_3` varchar(20),
+  `type_tag_4` varchar(20),
+  `type_tag_5` varchar(20),
+  `create_time` datetime
+  PRIMARY KEY (`condition_id`),
+  UNIQUE KEY `conditionlib_ix1` (`condition_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #临时用来测试
 CREATE TABLE

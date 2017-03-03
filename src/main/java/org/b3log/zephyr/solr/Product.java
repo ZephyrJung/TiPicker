@@ -11,7 +11,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.solr.core.geo.Point;
 import org.springframework.data.solr.core.mapping.SolrDocument;
 
-@SolrDocument(solrCoreName = "collection1")
+@SolrDocument(solrCoreName = "Collection1")
 public class Product {
 
     @Id
