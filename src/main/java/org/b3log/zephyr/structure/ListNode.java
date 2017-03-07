@@ -49,6 +49,19 @@ public class ListNode<T> {
     this.next = next;
   }
 
+  public static ListNode<Integer> createList(int[] integers) {
+    ListNode<Integer> head = new ListNode<Integer>(integers[0]);
+    if (integers.length > 1) {
+      ListNode<Integer> prevNode = head;
+      for (int i = 1; i < integers.length; i++) {
+        ListNode<Integer> currentNode = new ListNode<Integer>(integers[i]);
+        prevNode.setNext(currentNode);
+        prevNode = currentNode;
+      }
+    }
+    return head;
+  }
+
   @Override public boolean equals(Object o) {
     if (this == o) return true;
     if (!(o instanceof ListNode)) return false;
