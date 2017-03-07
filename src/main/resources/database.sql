@@ -11,13 +11,17 @@ CREATE TABLE messagelib (
   CONSTRAINT messagelib_ix1 UNIQUE (message_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE taglib (
-  tag_id varchar(20) NOT NULL,
-  tag_name varchar(50) NOT NULL,
-  tag_logo varchar(50) NOT NULL,
-  description varchar(200),
-  creator varchar(20) NOT NULL,
-  create_time datetime NOT NULL, PRIMARY KEY (tag_id), CONSTRAINT taglib_ix1 UNIQUE (tag_id)
+CREATE TABLE `taglib` (
+  `tag_id` varchar(20) NOT NULL,
+  `tag_code` varchar(20) NOT NULL DEFAULT '',
+  `tag_group` varchar(20) NOT NULL DEFAULT '',
+  `tag_name` varchar(50) NOT NULL,
+  `tag_logo` varchar(50) NOT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `creator` varchar(20) NOT NULL,
+  `create_time` datetime NOT NULL,
+  PRIMARY KEY (`tag_id`),
+  UNIQUE KEY `taglib_ix1` (`tag_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE votelib (
@@ -53,8 +57,18 @@ CREATE TABLE
   create_time DATETIME NOT NULL,
   PRIMARY KEY (comment_id),
   CONSTRAINT commentlib_ix1 UNIQUE (comment_id)
-)
-  ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#条件表
+CREATE TABLE `conditionLib` (
+  `condition_id` varchar(20) NOT NULL,
+  `tag_id` varchar(20) DEFAULT NULL,
+  `parent_tag_id` varchar(20) DEFAULT NULL,
+  `creator` varchar(20) DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`condition_id`),
+  UNIQUE KEY `conditionlib_ix1` (`condition_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #临时用来测试
 CREATE TABLE
@@ -62,5 +76,4 @@ CREATE TABLE
 (
   user_id VARCHAR(20),
   user_name VARCHAR(50)
-)
-  ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

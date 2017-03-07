@@ -6,17 +6,17 @@ package org.b3log.zephyr.algorithm;
 public class A05_DivideUsingSubtraction {
 
     public static void main(String[] args){
-        System.out.println(new A05_DivideUsingSubtraction().divideIterative(99,7));
+        System.out.println(new A05_DivideUsingSubtraction().divideIterative(10,7));
         System.out.println(new A05_DivideUsingSubtraction().divideRecursive(99,7));
     }
 
     public float divideIterative(int dividend, int divider) {
         validateInput(divider);
         float result = 0;
-        while (dividend > divider) {
-            dividend -= divider;
-            result++;
-        }
+//        while (dividend > divider) {
+//            dividend -= divider;
+//            result++;
+//        }
         float decimalPart = (float) dividend / (float) divider;
         result += decimalPart;
         return result;
