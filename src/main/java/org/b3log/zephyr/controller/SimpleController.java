@@ -1,7 +1,9 @@
 package org.b3log.zephyr.controller;
 
+import org.b3log.zephyr.service.MailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,6 +17,9 @@ public class SimpleController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
+    @Autowired
+    MailService mailService;
+
     @RequestMapping(value ="/", method = RequestMethod.GET)
     @ResponseBody
     public String index(){
@@ -25,6 +30,17 @@ public class SimpleController {
     @ResponseBody
     public String hello(){
         return "hello world";
+    }
+
+    @RequestMapping(value ="/mail", method = RequestMethod.GET)
+    @ResponseBody
+    public String sendMail(){
+        try {
+            mailService.sendSimpleMail();
+            return "send mail success";
+        } catch (Exception e) {
+            return "send mail error";
+        }
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
