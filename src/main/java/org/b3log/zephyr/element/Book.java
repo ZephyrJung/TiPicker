@@ -1,6 +1,6 @@
 package org.b3log.zephyr.element;
 
-import org.b3log.zephyr.structure.DoubleList;
+import org.b3log.demo.structure.DoubleList;
 
 /**
  * Created by Zephyr on 2017/2/7.

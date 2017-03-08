@@ -76,7 +76,7 @@
             </div>
             <div class="row" style="margin-top:25px;">
                 <form id="addForm" action="../addMessage" method="post">
-                        <div class="col-md-9">
+                        <div class="col-md-12">
                             <textarea id="message" name="message" class="form-control" rows="3"></textarea>
                         </div>
                 </form>
@@ -95,7 +95,7 @@
             <div class="col-md-9">
                 <div class="row">
                 <#list welcomeTag as wt>
-                    <button class="btn btn-default" type="button">
+                    <button class="btn btn-default" type="button" onclick="selectTag()">
                     ${wt.tagName} <span class="badge" style="background-color: #D9534F">${wt.tagCount}</span>
                     </button>
                 </#list>
@@ -113,7 +113,6 @@
                 </#list>
             </div>
         </div>
-    </#list>
     </div>
     <script src="js/welcome.js"></script>
 </body>

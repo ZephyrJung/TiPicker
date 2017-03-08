@@ -1,6 +1,6 @@
 package org.b3log.zephyr.util;
 
-import org.b3log.zephyr.structure.ListNode;
+import org.b3log.demo.structure.ListNode;
 
 import java.util.List;
 import java.util.Set;
