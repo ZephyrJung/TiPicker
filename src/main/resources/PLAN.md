@@ -1,3 +1,14 @@
+Paragraph的Tag应该是固定的，这是基本元素
+这个Paragraph一般存储在一个Article中，但并不排除单拿出来的可能
+Article可能被收录到任意Book中
+Book也可能被任意Libarary保存
+并且均可以重复出现。但是在同层级下不能重复
+数据表层级保存：
+Paragraph表保存Tag和正文
+Article保存Tag和Paragraph
+Book保存Tag和Article
+Library保存Tag和Book
+
 ### 日志页面的自定义
 通过某种手段，让用户自定义显示文章的显示方式，或者注意此处的扩展，保证将来容易实现新的展示方式
 比如
@@ -64,3 +75,6 @@ solr保存用户产生的信息
 五级（三级）条件均以标签形式存在于taglib表中，创建者为system
 
 ### 厨房做菜的过程似乎很适合作为并发例子练习
+
+### websocket即时通讯
+

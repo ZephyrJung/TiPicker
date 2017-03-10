@@ -1,33 +1,77 @@
 package org.b3log.zephyr;
 
-import org.apache.activemq.command.ActiveMQQueue;
+import org.b3log.zephyr.websocket.client.GreetingService;
+import org.b3log.zephyr.websocket.client.SimpleGreetingService;
+import org.b3log.zephyr.websocket.echo.DefaultEchoService;
+import org.b3log.zephyr.websocket.echo.EchoService;
+import org.b3log.zephyr.websocket.echo.EchoWebSocketHandler;
+import org.b3log.zephyr.websocket.snake.SnakeWebSocketHandler;
+import org.b3log.zephyr.websocket.reverse.ReverseWebSocketEndpoint;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
-
-import javax.jms.Queue;
+import org.springframework.web.socket.WebSocketHandler;
+import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
+import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+import org.springframework.web.socket.handler.PerConnectionWebSocketHandler;
+import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 @SpringBootApplication
-public class TipickerApplication {
+public class TipickerApplication extends SpringBootServletInitializer
+		implements WebSocketConfigurer {
 
-	@Bean
-	public Queue queue() {
-		return new ActiveMQQueue("sample.queue");
-	}
+//	@Bean
+//	public Queue queue() {
+//		return new ActiveMQQueue("sample.queue");
+//	}
+
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(TipickerApplication.class, args);
 	}
+
+	@Override
+	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+		registry.addHandler(echoWebSocketHandler(), "/echo").withSockJS();
+		registry.addHandler(snakeWebSocketHandler(), "/snake").withSockJS();
+	}
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(TipickerApplication.class);
+	}
+
+	@Bean
+	public EchoService echoService() {
+		return new DefaultEchoService("Did you say \"%s\"?");
+	}
+
+	@Bean
+	public GreetingService greetingService() {
+		return new SimpleGreetingService();
+	}
+
+	@Bean
+	public WebSocketHandler echoWebSocketHandler() {
+		return new EchoWebSocketHandler(echoService());
+	}
+
+	@Bean
+	public WebSocketHandler snakeWebSocketHandler() {
+		return new PerConnectionWebSocketHandler(SnakeWebSocketHandler.class);
+	}
+
+
+	@Bean
+	public ReverseWebSocketEndpoint reverseWebSocketEndpoint() {
+		return new ReverseWebSocketEndpoint();
+	}
+
+	@Bean
+	public ServerEndpointExporter serverEndpointExporter() {
+		return new ServerEndpointExporter();
+	}
 }
-/*
-Paragraph的Tag应该是固定的，这是基本元素
-这个Paragraph一般存储在一个Article中，但并不排除单拿出来的可能
-Article可能被收录到任意Book中
-Book也可能被任意Libarary保存
-并且均可以重复出现。但是在同层级下不能重复
-数据表层级保存：
-Paragraph表保存Tag和正文
-Article保存Tag和Paragraph
-Book保存Tag和Article
-Library保存Tag和Book
- */
