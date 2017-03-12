@@ -1,5 +1,6 @@
 package org.b3log.demo.concurrency;
 
+import java.util.Calendar;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -14,7 +15,7 @@ public class TaskThread implements Runnable {
     public void run() {
         String test=queue.poll();
         if(test!=null){
-            System.out.println(Thread.currentThread().getId()+" : "+test);
+            System.out.println(System.currentTimeMillis()+" : "+test);
         }
 
     }
