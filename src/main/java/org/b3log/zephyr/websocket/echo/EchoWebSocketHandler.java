@@ -16,19 +16,10 @@
 
 package org.b3log.zephyr.websocket.echo;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import org.springframework.web.socket.CloseStatus;
-import org.springframework.web.socket.TextMessage;
-import org.springframework.web.socket.WebSocketHandler;
-import org.springframework.web.socket.WebSocketSession;
-import org.springframework.web.socket.handler.TextWebSocketHandler;
-
 /**
  * Echo messages by implementing a Spring {@link WebSocketHandler} abstraction.
  */
-public class EchoWebSocketHandler extends TextWebSocketHandler {
+/*public class EchoWebSocketHandler extends TextWebSocketHandler {
 
 	private static Logger logger = LoggerFactory.getLogger(EchoWebSocketHandler.class);
 
@@ -57,4 +48,4 @@ public class EchoWebSocketHandler extends TextWebSocketHandler {
 		session.close(CloseStatus.SERVER_ERROR);
 	}
 
-}
+}*/

@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class WsController {
-    @MessageMapping("/welcome")
-    @SendTo("/topic/getResponse")
+    @MessageMapping("/welcome") //页面发送信息的url映射
+    @SendTo("/topic/getResponse") //页面接收信息的url映射
     public ResponseMessage say(RequestMessage message) {
         System.out.println(message.getName());
         return new ResponseMessage("welcome," + message.getName() + " !");

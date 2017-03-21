@@ -1,15 +1,11 @@
 package org.b3log.zephyr.websocket;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer;
-import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
-
 /**
  * Created by yaya on 17-3-12.
  */
+/*
 @Configuration
-//@EnableWebSocketMessageBroker
+@EnableWebSocketMessageBroker
 public class WebSocketConfig
         extends AbstractWebSocketMessageBrokerConfigurer
 {
@@ -22,6 +18,6 @@ public class WebSocketConfig
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/topic");
+        registry.enableSimpleBroker(new String[]{"/topic","/game"});
     }
-}
+}*/

@@ -16,17 +16,7 @@
 
 package org.b3log.zephyr.websocket.client;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicReference;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import org.springframework.web.socket.TextMessage;
-import org.springframework.web.socket.WebSocketSession;
-import org.springframework.web.socket.handler.TextWebSocketHandler;
-
-public class SimpleClientWebSocketHandler extends TextWebSocketHandler {
+/*public class SimpleClientWebSocketHandler extends TextWebSocketHandler {
 
 	protected Log logger = LogFactory.getLog(SimpleClientWebSocketHandler.class);
 
@@ -58,4 +48,4 @@ public class SimpleClientWebSocketHandler extends TextWebSocketHandler {
 		this.latch.countDown();
 	}
 
-}
+}*/

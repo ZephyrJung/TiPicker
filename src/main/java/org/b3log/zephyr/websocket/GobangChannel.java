@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Component;
+import org.springframework.web.socket.server.standard.SpringConfigurator;
 
 import javax.websocket.CloseReason;
 import javax.websocket.OnClose;
@@ -20,8 +21,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 /**
  * Created by Zephyr on 2017/3/20.
  */
-@ServerEndpoint(value = "/gobang-game-channel", configurator = Channels.WebSocketConfigurator.class)
-@Component
+@ServerEndpoint(value = "/gobang-game-channel", configurator = SpringConfigurator.class)
 public class GobangChannel {
 
 

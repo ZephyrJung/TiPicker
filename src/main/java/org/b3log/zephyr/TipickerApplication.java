@@ -18,5 +18,4 @@ public class TipickerApplication{
 	public static void main(String[] args) {
 		SpringApplication.run(TipickerApplication.class, args);
 	}
-
 }
