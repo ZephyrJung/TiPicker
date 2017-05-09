@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <#include "common/common.ftl">
+
 </head>
 <body>
 <#include "common/top.ftl">
@@ -17,12 +18,10 @@
                         <label>类型</label>
                     </div>
                     <div class="col-md-2">
-                        <select id="messageType" class="form-control">
-                            <option value="1">贴吧</option>
-                            <option value="2">论坛</option>
-                            <option value="3">记录</option>
-                            <option value="4">活动</option>
-                            <option value="5">聊天</option>
+                        <select id="messageType" class="form-control" v-model="selected">
+                            <option v-for="option in options" v-bind:value="option.value">
+                                {{option.text}}
+                            </option>
                         </select>
                     </div>
                     <div class="col-md-1">
@@ -94,23 +93,23 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
-                <#list welcomeTag as wt>
-                    <button class="btn btn-default" type="button" onclick="selectTag()">
-                    ${wt.tagName} <span class="badge" style="background-color: #D9534F">${wt.tagCount}</span>
-                    </button>
-                </#list>
+                <#--<#list welcomeTag as wt>-->
+                    <#--<button class="btn btn-default" type="button" onclick="selectTag()">-->
+                    <#--${wt.tagName} <span class="badge" style="background-color: #D9534F">${wt.tagCount}</span>-->
+                    <#--</button>-->
+                <#--</#list>-->
                 </div>
-                <#list welcomeList as wl>
-                    <div class="media">
-                        <div class="media-body">
-                            <h5 class="media-heading">${wl.message}
-                                <span class="label label-danger">${wl.tag}</span>
-                            </h5>
-                            <p>${wl.creator}</p>
-                            <p>${wl.createTime?datetime}</p>
-                        </div>
-                    </div>
-                </#list>
+                <#--<#list welcomeList as wl>-->
+                    <#--<div class="media">-->
+                        <#--<div class="media-body">-->
+                            <#--<h5 class="media-heading">${wl.message}-->
+                                <#--<span class="label label-danger">${wl.tag}</span>-->
+                            <#--</h5>-->
+                            <#--<p>${wl.creator}</p>-->
+                            <#--<p>${wl.createTime?datetime}</p>-->
+                        <#--</div>-->
+                    <#--</div>-->
+                <#--</#list>-->
             </div>
         </div>
     </div>

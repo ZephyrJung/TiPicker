@@ -1,4 +1,4 @@
-package org.b3log.zephyr.elasticsearch;
+package org.b3log.demo.elasticsearch;
 
 /**
  * Created by yaya on 17-3-14.

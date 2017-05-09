@@ -1,4 +1,4 @@
-package org.b3log.zephyr.elasticsearch;
+package org.b3log.demo.elasticsearch;
 
 /**
  * Created by yaya on 17-3-14.
@@ -6,7 +6,6 @@ package org.b3log.zephyr.elasticsearch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //@SpringBootApplication
 public class SampleElasticsearchApplication implements CommandLineRunner {

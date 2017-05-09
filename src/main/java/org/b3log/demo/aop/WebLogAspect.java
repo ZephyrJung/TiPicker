@@ -1,4 +1,4 @@
-package org.b3log.zephyr.aop;
+package org.b3log.demo.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
