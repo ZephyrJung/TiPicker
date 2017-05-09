@@ -33,10 +33,10 @@ public class WelcomeController {
 
     @GetMapping("/welcome")
     public String welcome(Map<String, Object> model) {
-//        List<WelcomeListModel> welcomeList=welcomeService.getWelcomeList();
-//        List<WelcomeTagModel> welcomeTag=welcomeService.getWelcomeTag("test");
-//        model.put("welcomeList", welcomeList);
-//        model.put("welcomeTag",welcomeTag);
+        List<WelcomeListModel> welcomeList=welcomeService.getWelcomeList();
+        List<WelcomeTagModel> welcomeTag=welcomeService.getWelcomeTag("test");
+        model.put("welcomeList", welcomeList);
+        model.put("welcomeTag",welcomeTag);
         return "welcome";
     }
 

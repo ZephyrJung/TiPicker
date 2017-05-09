@@ -2,7 +2,7 @@ CREATE DATABASE pentatonic;
 
 CREATE TABLE messagelib (
   message_id varchar(50) NOT NULL,
-  tag_lib varchar(20) NOT NULL,
+  tag_id varchar(20) NOT NULL,
   content varchar(500) NOT NULL,
   creator varchar(20) NOT NULL,
   update_time datetime,

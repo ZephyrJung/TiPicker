@@ -93,23 +93,23 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
-                <#--<#list welcomeTag as wt>-->
-                    <#--<button class="btn btn-default" type="button" onclick="selectTag()">-->
-                    <#--${wt.tagName} <span class="badge" style="background-color: #D9534F">${wt.tagCount}</span>-->
-                    <#--</button>-->
-                <#--</#list>-->
+                <#list welcomeTag as wt>
+                    <button class="btn btn-default" type="button" onclick="selectTag()">
+                    ${wt.tagName} <span class="badge" style="background-color: #D9534F">${wt.tagCount}</span>
+                    </button>
+                </#list>
                 </div>
-                <#--<#list welcomeList as wl>-->
-                    <#--<div class="media">-->
-                        <#--<div class="media-body">-->
-                            <#--<h5 class="media-heading">${wl.message}-->
-                                <#--<span class="label label-danger">${wl.tag}</span>-->
-                            <#--</h5>-->
-                            <#--<p>${wl.creator}</p>-->
-                            <#--<p>${wl.createTime?datetime}</p>-->
-                        <#--</div>-->
-                    <#--</div>-->
-                <#--</#list>-->
+                <#list welcomeList as wl>
+                    <div class="media">
+                        <div class="media-body">
+                            <h5 class="media-heading">${wl.message}
+                                <span class="label label-danger">${wl.tag}</span>
+                            </h5>
+                            <p>${wl.creator}</p>
+                            <p>${wl.createTime?datetime}</p>
+                        </div>
+                    </div>
+                </#list>
             </div>
         </div>
     </div>
