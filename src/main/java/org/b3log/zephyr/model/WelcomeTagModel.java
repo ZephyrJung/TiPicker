@@ -1,4 +1,4 @@
-package org.b3log.zephyr.element.model;
+package org.b3log.zephyr.model;
 
 /**
  * Created by yaya on 17-2-28.
@@ -6,6 +6,7 @@ package org.b3log.zephyr.element.model;
 public class WelcomeTagModel {
     private String tagName;
     private int tagCount;
+    private String tagCreator;
 
     public String getTagName() {
         return tagName;
@@ -21,5 +22,13 @@ public class WelcomeTagModel {
 
     public void setTagCount(int tagCount) {
         this.tagCount = tagCount;
+    }
+
+    public String getTagCreator() {
+        return tagCreator;
+    }
+
+    public void setTagCreator(String tagCreator) {
+        this.tagCreator = tagCreator;
     }
 }

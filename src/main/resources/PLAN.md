@@ -78,3 +78,8 @@ solr保存用户产生的信息
 
 ### websocket即时通讯
 
+### 数据存储
+MySQL->系统信息
+Redis->缓存
+Elasticsearch->产出信息
+

@@ -1,9 +1,11 @@
 package org.b3log.zephyr;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@MapperScan("org.b3log.zephyr.dao")
 public class TipickerApplication{
 
 //	@Bean

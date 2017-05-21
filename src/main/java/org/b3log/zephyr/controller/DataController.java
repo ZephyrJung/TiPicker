@@ -2,8 +2,6 @@ package org.b3log.zephyr.controller;
 
 import org.b3log.zephyr.element.Test;
 import org.b3log.zephyr.element.entity.UserLib;
-import org.b3log.zephyr.mapper.TestMapper;
-import org.b3log.zephyr.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +17,7 @@ import java.util.List;
 
 @Controller
 public class DataController {
-    @Autowired
+    /*@Autowired
     private TestMapper testMapper;
 
     @Autowired
@@ -82,5 +80,5 @@ public class DataController {
             result.append(userLib.getUserId()+":"+userLib.getUserName()+"\n");
         }
         return result.toString();
-    }
+    }*/
 }

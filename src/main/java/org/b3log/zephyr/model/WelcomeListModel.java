@@ -1,4 +1,4 @@
-package org.b3log.zephyr.element.model;
+package org.b3log.zephyr.model;
 
 import java.util.Date;
 

@@ -9,7 +9,7 @@ import org.b3log.zephyr.element.Test;
  * Created by yaya on 17-2-12.
  */
 
-@Mapper
+//@Mapper
 public interface TestMapper {
 
     @Select("SELECT * FROM SYMPHONY_USER_TAG WHERE OID=#{oId}")

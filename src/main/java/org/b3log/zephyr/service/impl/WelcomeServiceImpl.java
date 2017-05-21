@@ -1,20 +1,17 @@
 package org.b3log.zephyr.service.impl;
 
-import org.b3log.zephyr.element.entity.MessageLib;
-import org.b3log.zephyr.element.entity.TagLib;
-import org.b3log.zephyr.element.model.WelcomeTagModel;
-import org.b3log.zephyr.mapper.MessageMapper;
-import org.b3log.zephyr.mapper.TagMapper;
-import org.b3log.zephyr.element.model.WelcomeListModel;
+import org.b3log.zephyr.dao.MessageDAO;
+import org.b3log.zephyr.dao.TagDAO;
+import org.b3log.zephyr.model.WelcomeTagModel;
+import org.b3log.zephyr.model.WelcomeListModel;
 import org.b3log.zephyr.service.WelcomeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by yaya on 17-2-27.
@@ -22,42 +19,50 @@ import java.util.List;
 @Service
 public class WelcomeServiceImpl implements WelcomeService{
     @Autowired
-    private TagMapper tagMapper;
+    private MessageDAO messageDAO;
 
     @Autowired
-    private MessageMapper messageMapper;
+    private TagDAO tagDAO;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @Override
     public List<WelcomeListModel> getWelcomeList() {
-        List<WelcomeListModel> welcomeList=new ArrayList<WelcomeListModel>();
-        //目前为findAll，但之后可能会改成findRecent
-        List<MessageLib> messageLibs=messageMapper.findAllMessages();
-        for(MessageLib ml:messageLibs){
-            WelcomeListModel wm=new WelcomeListModel();
-            TagLib tagLib=tagMapper.findByTagId(ml.getTag_id());
-            wm.setMessage(ml.getContent());
-            wm.setCreateTime(ml.getCreate_time());
-            wm.setCreator(ml.getCreator());
-            wm.setTag(tagLib.getTag_name());
-            welcomeList.add(wm);
-        }
-        return welcomeList;
+        List<WelcomeListModel> result= messageDAO.findWelcomeList();
+        return result;
     }
 
     @Override
     public List<WelcomeTagModel> getWelcomeTag(String userid) {
-        List<WelcomeTagModel> welcomeTagModels=new ArrayList<WelcomeTagModel>();
-        List<TagLib> tagLibs=tagMapper.findTagsByUser(userid);
-        for(TagLib tagLib:tagLibs){
-            WelcomeTagModel welcomeTagModel=new WelcomeTagModel();
-            welcomeTagModel.setTagName(tagLib.getTag_name());
-            welcomeTagModel.setTagCount(tagMapper.countTagsById(tagLib.getTag_id(),userid));
-            welcomeTagModels.add(welcomeTagModel);
-        }
-        return welcomeTagModels;
+        List<WelcomeTagModel> result=tagDAO.findTagsByUserId("test");
+        findCityById();
+        return result;
     }
 
-    @Override
+    public String findCityById() {
+        // 从缓存中获取城市信息
+        String key = "city_1";
+        ValueOperations<String, String> operations = redisTemplate.opsForValue();
+
+        // 缓存存在
+        boolean hasKey = redisTemplate.hasKey(key);
+        if (hasKey) {
+            String city = operations.get(key);
+            System.out.println(city);
+            return city;
+        }
+
+        // 从 DB 中获取城市信息
+//        City city = cityDao.findById(id);
+        String city="Beijing";
+        // 插入缓存
+        operations.set(key, city);
+        System.out.println("insert a new key:>"+key);
+        return null;
+    }
+
+    /*@Override
     @Transactional
     public void saveWelcomeListModel(WelcomeListModel wm) {
         Long mid=System.currentTimeMillis();
@@ -74,5 +79,5 @@ public class WelcomeServiceImpl implements WelcomeService{
         }
 
         messageMapper.saveMessage(mid.toString(),tid.toString(),wm.getMessage(),wm.getCreator(),updateTime,createTime);
-    }
+    }*/
 }
