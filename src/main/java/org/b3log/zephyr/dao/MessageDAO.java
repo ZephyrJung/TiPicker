@@ -1,12 +1,14 @@
 package org.b3log.zephyr.dao;
 
 import org.b3log.zephyr.model.WelcomeListModel;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by yaya on 17-5-20.
  */
+@Repository("messageDAO")
 public interface MessageDAO{
 //    List<MessageLib> findAllMessages();
 //

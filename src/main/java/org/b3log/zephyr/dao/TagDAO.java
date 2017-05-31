@@ -2,13 +2,14 @@ package org.b3log.zephyr.dao;
 
 import org.apache.ibatis.annotations.*;
 import org.b3log.zephyr.model.WelcomeTagModel;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by Zephyr on 2017/2/14.
  */
-//@Mapper
+@Repository("tagDAO")
 public interface TagDAO{
     List<WelcomeTagModel> findTagsByUserId(@Param("uid") String uid);
 
