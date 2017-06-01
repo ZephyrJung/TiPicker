@@ -1,10 +1,13 @@
 package org.b3log.zephyr.controller;
 
+import org.b3log.zephyr.elasticsearch.Customer;
 import org.b3log.zephyr.element.Test;
 import org.b3log.zephyr.element.entity.UserLib;
+import org.b3log.zephyr.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -81,4 +84,21 @@ public class DataController {
         }
         return result.toString();
     }*/
+    @Autowired
+    CustomerService customerService;
+
+    @RequestMapping(value="/addUser",method = RequestMethod.GET)
+    @ResponseBody
+    public String addUesr(){
+        customerService.addUser("zephyr","jung");
+        return "SUCCESS!";
+    }
+
+    //虽说方法是findbyfirstname，但是实际效果似乎是match_all，具体如何使用应当查阅文档
+    @RequestMapping(value ="/hello", method = RequestMethod.GET)
+    @ResponseBody
+    public String sayHello(String firstName){
+        Customer customer=customerService.findByFirstName(firstName);
+        return "hello, "+customer.toString();
+    }
 }
