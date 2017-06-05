@@ -13,6 +13,7 @@ import java.util.List;
  */
 @Service
 public class CustomerServiceImpl implements CustomerService{
+
     @Autowired
     CustomerRepository customerRepository;
 
@@ -28,10 +29,10 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void addUser(String firstName, String lastName) {
-        Customer c = new Customer();
-        c.setFirstName(firstName);
-        c.setLastName(lastName);
-        c.setId("test");
-        customerRepository.save(c);
+//        Customer c = new Customer();
+//        c.setFirstName(firstName);
+//        c.setLastName(lastName);
+//        c.setId("test");
+//        customerRepository.save(c);
     }
 }
