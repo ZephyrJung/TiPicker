@@ -8,10 +8,8 @@
         <result column="create_time" property="createTime"/>
     </resultMap>
 
-    <parameterMap id="MessageLib" type="org.b3log.zephyr.element.entity.MessageLib"/>
-
-    <insert id="saveMessage" parameterMap="org.b3log.zephyr.element.entity.MessageLib">
-        insert into messagelib values(
+    <insert id="saveMessage" parameterType="org.b3log.zephyr.element.entity.MessageLib">
+        INSERT INTO messagelib VALUES(
           #{message_id},
           #{tag_id},
           #{content},
@@ -20,5 +18,7 @@
           #{create_time}
         )
     </insert>
-
+    <select id="countTagsById">
+        SELECT COUNT(1) FROM messagelib WHERE tag_id=#{tid} AND creator=#{uid}
+    </select>
 </mapper>

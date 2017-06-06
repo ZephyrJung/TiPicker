@@ -8,8 +8,6 @@
         <result column="createTime" property="createTime" />
     </resultMap>
 
-    <parameterMap id="ConditionLib" type="org.b3log.zephyr.element.entity.ConditionLib"/>
-
     <sql id="Columns">
         message_id, tag_id, content, creator, update_time, create_time
     </sql>

@@ -1,6 +1,8 @@
 package org.b3log.zephyr.dao.biz;
 
+import org.apache.ibatis.annotations.Param;
 import org.b3log.zephyr.model.welcome.WelcomeListModel;
+import org.b3log.zephyr.model.welcome.WelcomeTagModel;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,17 +12,6 @@ import java.util.List;
  */
 @Repository("welcomeDAO")
 public interface WelcomeDAO {
-//    List<MessageLib> findAllMessages();
-//
-//    MessageLib findByMessageId(@Param("mid") String mid);
-//
-//    int saveMessagessage(@Param("messageId") String messageId, @Param("tagId") String tagId,
-//                    @Param("content") String content, @Param("creator") String creator,
-//                    @Param("updateTime") Date updateTime, @Param("createTime") Date createTime);
-//
-//    int deleteUser(@Param("uname") String uname);
-//
-//    int updateUser(@Param("uid") String uid, @Param("uname") String uname);
-//
     List<WelcomeListModel> findWelcomeList();
+    List<WelcomeTagModel> findTagsByUserId(@Param("uid") String uid);
 }

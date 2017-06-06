@@ -8,9 +8,21 @@
         <result column="create_time" property="createTime" />
     </resultMap>
 
+    <resultMap id="welcomTagModel" type="org.b3log.zephyr.model.welcome.WelcomeTagModel">
+        <result column="tag_name" property="tagName"/>
+        <result column="tag_count" property="tagCount"/>
+        <result column="creator" property="tagCreator"/>
+    </resultMap>
+
    <select id="findWelcomeList" resultMap="welcomeListModel">
       SELECT t.tag_name,content,m.creator,m.create_time
       FROM messagelib m
       LEFT JOIN taglib t ON m.tag_id=t.tag_id
    </select>
+
+    <select id="findTagsByUserId" resultMap="welcomTagModel">
+        select t.tag_name,m.creator,count(1) as tag_count from messagelib m left join taglib t on m.tag_id=t.tag_id
+        where m.creator=#{uid}
+        group by m.tag_id,m.creator
+    </select>
 </mapper>

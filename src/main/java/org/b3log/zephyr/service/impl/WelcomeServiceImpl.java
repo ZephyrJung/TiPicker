@@ -34,7 +34,7 @@ public class WelcomeServiceImpl implements WelcomeService{
 
     @Override
     public List<WelcomeTagModel> getWelcomeTag(String userid) {
-        List<WelcomeTagModel> result=tagDAO.findTagsByUserId("test");
+        List<WelcomeTagModel> result=welcomeDAO.findTagsByUserId("test");
         return result;
     }
 
