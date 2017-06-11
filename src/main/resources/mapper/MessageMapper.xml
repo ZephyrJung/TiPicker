@@ -8,11 +8,11 @@
         <result column="create_time" property="createTime" />
     </resultMap>
 
-    <parameterMap id="MessageLib" type="org.b3log.zephyr.element.entity.MessageLib"/>
-
    <select id="findWelcomeList" resultMap="welcomeListModel">
       SELECT t.tag_name,content,m.creator,m.create_time
       FROM messagelib m
       LEFT JOIN taglib t ON m.tag_id=t.tag_id
    </select>
+
+
 </mapper>

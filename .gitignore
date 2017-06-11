@@ -52,3 +52,6 @@ tipicker.iml
 .idea
 *.class
 target/
+data/elasticsearch/nodes/0/_state/global-12.st
+
+data/elasticsearch/nodes/0/node.lock
