@@ -25,7 +25,7 @@ vote_oid：顶踩（投票）对象ID
 vote_type：顶踩内容类型
 vote_value：顶踩或者其他
 
-pentatoniclib：存放所有文章聚合记录
+pentatoniclib：存放所有文章聚合记录--聚合记录应该放到ES
 penta_id
 tag_id
 description

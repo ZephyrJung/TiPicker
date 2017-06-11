@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="org.b3log.zephyr.dao.MessageDAO">
-    <resultMap id="welcomeListModel" type="org.b3log.zephyr.model.WelcomeListModel">
+    <resultMap id="welcomeListModel" type="org.b3log.zephyr.model.welcome.WelcomeListModel">
         <result column="tagName" property="tag" />
         <result column="content" property="message" />
         <result column="creator" property="creator" />
         <result column="createTime" property="createTime" />
     </resultMap>
-
-    <parameterMap id="ConditionLib" type="org.b3log.zephyr.element.entity.ConditionLib"/>
 
     <sql id="Columns">
         message_id, tag_id, content, creator, update_time, create_time

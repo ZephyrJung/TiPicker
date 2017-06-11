@@ -3,13 +3,9 @@ package org.b3log.zephyr.elasticsearch;
 /**
  * Created by yaya on 17-3-14.
  */
-import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "customer", type = "customer", shards = 1, replicas = 0, refreshInterval = "-1")
 public class Customer {
 
-    @Id
     private String id;
 
     private String firstName;

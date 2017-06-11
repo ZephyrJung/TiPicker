@@ -4,8 +4,8 @@ package org.b3log.zephyr.controller;
  * Created by Zephyr on 2017/2/11.
  */
 
-import org.b3log.zephyr.model.WelcomeListModel;
-import org.b3log.zephyr.model.WelcomeTagModel;
+import org.b3log.zephyr.model.welcome.WelcomeListModel;
+import org.b3log.zephyr.model.welcome.WelcomeTagModel;
 import org.b3log.zephyr.service.WelcomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,14 +42,14 @@ public class WelcomeController {
     public ModelAndView addText(WelcomeListModel wm){
         //使用github或QQ连接登录
         wm.setCreator("test");
-//        welcomeService.saveWelcomeListModel(wm);
+        welcomeService.saveWelcomeListModel(wm);
         //使用观察者模式在其他地方通知更新
         List<WelcomeListModel> welcomeList=welcomeService.getWelcomeList();
-//        List<WelcomeTagModel> welcomeTag=welcomeService.getWelcomeTag(wm.getCreator());
+        List<WelcomeTagModel> welcomeTag=welcomeService.getWelcomeTag(wm.getCreator());
         ModelAndView mv=new ModelAndView();
         mv.setViewName("welcome");
         mv.addObject("welcomeList",welcomeList);
-//        mv.addObject("welcomeTag",welcomeTag);
+        mv.addObject("welcomeTag",welcomeTag);
         return mv;
     }
 
