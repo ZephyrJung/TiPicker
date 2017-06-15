@@ -48,8 +48,8 @@ public class WelcomeController {
         List<WelcomeTagModel> welcomeTag=welcomeService.getWelcomeTag(wm.getCreator());
         ModelAndView mv=new ModelAndView();
         mv.setViewName("welcome");
-        mv.addObject("welcomeList",welcomeList);
-        mv.addObject("welcomeTag",welcomeTag);
+        mv.addObject("welcomeList" , welcomeList);
+        mv.addObject("welcomeTag" , welcomeTag);
         return mv;
     }
 
